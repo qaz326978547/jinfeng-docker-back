@@ -1,0 +1,4 @@
+{
+  "build_command": "cd src && composer install --no-dev --optimize-autoloader && npm install && npm run prod",
+  "start_command": "cd src && cp .env.example .env && php artisan config:cache && php artisan migrate --force && php artisan queue:work redis --sleep=3 --tries=3 & _startup"
+}
